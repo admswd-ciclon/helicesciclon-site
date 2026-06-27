@@ -1,138 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hélices Ciclón | Hélices de madera para aviones ultralivianos y experimentales</title>
-
-<meta name="description"
-content="Fabricación de hélices de madera para aviones ultralivianos y experimentales. Fabricadas bajo estrictos estándares técnicos para aplicaciones aeronáuticas.">
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hélices Ciclón | Hélices de madera para aviones ultralivianos y experimentales</title>
+    <meta name="description" content="Fabricación de hélices de madera para aviones ultralivianos y experimentales. Fabricadas bajo estrictos estándares técnicos para aplicaciones aeronáuticas.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<header>
+    <header class="site-header">
+        <div class="banner-stripes">
+            <div class="stripe-blue"></div>
+            <div class="stripe-white"></div>
+            <div class="stripe-blue"></div>
+        </div>
+        
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <img src="assets/logo.png" alt="Hélices Ciclón" class="logo">
+            </div>
+            
+            <div class="language-switch">
+                <button onclick="setLanguage('es')" class="lang-btn-flag es" title="Español">
+                    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="60" rx="8" fill="#c60b1e"/>
+                        <rect width="100" height="30" y="15" fill="#ffc400"/>
+                        <text x="50" y="42" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="Roboto Mono">ES</text>
+                    </svg>
+                </button>
+                <button onclick="setLanguage('en')" class="lang-btn-flag en" title="English">
+                    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="60" rx="8" fill="#012169"/>
+                        <path d="M0 0l100 60M100 0L0 60" stroke="#fff" stroke-width="10"/>
+                        <path d="M100 0L0 60" stroke="#da291c" stroke-width="6"/>
+                        <path d="M50 0v60M0 30h100" stroke="#fff" stroke-width="14"/>
+                        <path d="M50 0v60M0 30h100" stroke="#da291c" stroke-width="8"/>
+                        <text x="50" y="42" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="Roboto Mono">EN</text>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
 
-<img src="assets/logo.png" alt="Hélices Ciclón" class="logo">
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 id="hero-title">HÉLICES CICLÓN</h1>
+            <h2 id="hero-subtitle">Hélices de madera para aviones ultralivianos y experimentales</h2>
+            <p id="hero-text" class="hero-lead">Fabricación y soporte especializado.</p>
+            <p id="hero-text2">Fabricadas bajo estrictos estándares técnicos para aeronaves ultralivianas y experimentales.</p>
+            <a href="#contacto" id="hero-btn" class="btn">Solicitar Información</a>
+        </div>
+    </section>
 
-<div class="language-switch">
-<button onclick="setLanguage('es')">ES</button>
-<button onclick="setLanguage('en')">EN</button>
-</div>
+    <section class="features-section">
+        <div class="container">
+            <div class="grid-3">
+                <div class="card">
+                    <img src="assets/fabricacion.jpg" alt="Fabricación de hélices de madera" class="product-real-image">
+                    <h3 id="fabricacion-title">Fabricación</h3>
+                    <p id="fabricacion-text">Fabricación de hélices de madera para aeronaves ultralivianas y experimentales, desarrolladas para ofrecer rendimiento, confiabilidad y calidad constructiva.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/soporte.jpg" alt="Soporte técnico aeronáutico" class="product-real-image">
+                    <h3 id="soporte-title">Soporte Técnico</h3>
+                    <p id="soporte-text">Asistencia técnica y acompañamiento para la selección y utilización de hélices para distintas configuraciones de aeronaves y motorizaciones.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/calidad.jpg" alt="Estándares técnicos y calidad" class="product-real-image">
+                    <h3 id="calidad-title">Estándares Técnicos</h3>
+                    <p id="calidad-text">Diseño aerodinámico optimizado con maderas seleccionadas de alta calidad, asegurando un balanceado perfecto y máxima durabilidad en vuelo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</header>
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 id="testimonials-main-title" class="section-heading">Opiniones de Pilotos</h2>
+            <div class="grid-3">
+                <div class="testimonial-card">
+                    <p id="t1-text" class="quote">"Excelente rendimiento en mi avión experimental. El empuje mejoró notablemente en comparación con mi hélice anterior."</p>
+                    <span class="author">— Carlos S., Piloto Civil</span>
+                </div>
+                <div class="testimonial-card">
+                    <p id="t2-text" class="quote">"El soporte técnico me ayudó a elegir el paso exacto para mi motor Rotax. Una atención impecable y muy profesional."</p>
+                    <span class="author">— Jorge M., Constructor Amateur</span>
+                </div>
+                <div class="testimonial-card">
+                    <p id="t3-text" class="quote">"Terminaciones perfectas y un andar extremadamente suave sin vibraciones. Totalmente recomendados."</p>
+                    <span class="author">— Martín P., Usuario de Ultralivianos</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
+    <section id="contacto" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-form-block">
+                <h2 id="contact-title">Contacto</h2>
+                <form action="https://formsubmit.co/info@helicesciclon.com" method="POST" class="modern-form">
+                    <input type="text" name="nombre" id="form-name" placeholder="Nombre" required>
+                    <input type="email" name="email" id="form-email" placeholder="Email" required>
+                    <input type="text" name="telefono" id="form-phone" placeholder="Teléfono">
+                    <textarea name="mensaje" id="form-message" placeholder="Mensaje" required></textarea>
+                    <button type="submit" id="submit-btn" class="btn">Enviar</button>
+                </form>
+            </div>
 
-<h1 id="hero-title">
-HÉLICES CICLÓN
-</h1>
+            <div class="contact-data">
+                <h3 id="info-title">Contacto</h3>
+                <p><strong>Dirección:</strong> Moreno 780 - Teodelina 6009, Santa Fe - ARGENTINA</p>
+                <p><strong>Email:</strong> info@helicesciclon.com</p>
+                <p><strong>Teléfono:</strong> +54 9 3462652303</p>
+                
+                <div class="qr-card-container">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AH%C3%A9lices%20Cicl%C3%B3n%0AORG%3AH%C3%A9lices%20Cicl%C3%B3n%0ATEL%3BTYPE%3DCELL%2CVOICE%3A%2B5493462652303%0AEMAIL%3BTYPE%3DPREF%2CINTERNET%3Ainfo%40helicesciclon.com%0AADR%3BTYPE%3DWORK%3A%3B%3BMoreno%20780%3BTeodelina%3BSanta%20Fe%3B6009%3BArgentina%0AEND%3AVCARD" alt="Código QR de Contacto - Hélices Ciclón" class="qr-card-img">
+                    <p class="qr-card-text">vCard QR Code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2 id="hero-subtitle">
-Hélices de madera para aviones ultralivianos y experimentales
-</h2>
+    <footer>
+        <p id="footer-text">© 2026 Hélices Ciclón. Todos los derechos reservados.</p>
+    </footer>
 
-<p id="hero-text">
-Fabricación y soporte especializado.
-</p>
+    <a href="https://wa.me/5493462652303" target="_blank" class="whatsapp-badge" aria-label="WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-3.414c1.657.982 3.111 1.473 4.818 1.474 5.466 0 9.913-4.437 9.916-9.893.001-2.644-1.02-5.129-2.877-6.986-1.855-1.857-4.325-2.88-6.967-2.881-5.466 0-9.913 4.438-9.917 9.894a9.818 9.818 0 0 0 1.411 5.018l-.995 3.635 3.738-.971z"/></svg>
+        <span>WhatsApp</span>
+    </a>
 
-<p id="hero-text2">
-Fabricadas bajo estrictos estándares técnicos para aeronaves ultralivianas y experimentales.
-</p>
-
-<a href="#contacto" class="btn">
-Solicitar Información
-</a>
-
-</section>
-
-<section>
-
-<h2 id="fabricacion-title">Fabricación</h2>
-
-<p id="fabricacion-text">
-Fabricación de hélices de madera para aeronaves ultralivianas y experimentales, desarrolladas para ofrecer rendimiento, confiabilidad y calidad constructiva.
-</p>
-
-</section>
-
-<section>
-
-<h2 id="soporte-title">Soporte Técnico</h2>
-
-<p id="soporte-text">
-Asistencia técnica y acompañamiento para la selección y utilización de hélices para distintas configuraciones de aeronaves y motorizaciones.
-</p>
-
-</section>
-
-<section id="contacto">
-
-<h2 id="contact-title">
-Contacto
-</h2>
-
-<form
-action="https://formsubmit.co/TUEMAIL@EJEMPLO.COM"
-method="POST">
-
-<input type="text" name="nombre" placeholder="Nombre" required>
-
-<input type="email" name="email" placeholder="Email" required>
-
-<input type="text" name="telefono" placeholder="Teléfono">
-
-<textarea
-name="mensaje"
-placeholder="Mensaje"
-required></textarea>
-
-<button type="submit">
-Enviar
-</button>
-
-</form>
-
-</section>
-
-<section class="contact-data">
-
-<h3>Información de contacto</h3>
-
-<p>Dirección: COMPLETAR</p>
-
-<p>Email: COMPLETAR</p>
-
-<p>WhatsApp: COMPLETAR</p>
-
-</section>
-
-<footer>
-
-<p id="footer-text">
-© 2026 Hélices Ciclón. Todos los derechos reservados.
-</p>
-
-</footer>
-
-<a
-href="https://wa.me/549XXXXXXXXXX"
-target="_blank"
-class="whatsapp">
-
-WhatsApp
-
-</a>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
