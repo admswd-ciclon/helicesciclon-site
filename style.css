@@ -1,91 +1,461 @@
-body{
-margin:0;
-font-family:Inter,sans-serif;
-background:#ffffff;
-color:#2f3136;
+/* ==========================================================================
+   SISTEMA DE VARIABLES - PALETA NATURAL TÉCNICA
+   ========================================================================== */
+:root {
+    --primary-red: #c41e3a;
+    --primary-hover: #a01729;
+    --dark-text: #2c2c2c;
+    --page-bg: #f5f1e8;
+    --wood-dark: #5d4e37;
+    --sky-blue: #87ceeb;
+    --white: #ffffff;
+    --text-main: #3d3d3d;
+    --text-secondary: #6b6b6b;
+    --font-titles: 'Roboto Mono', monospace;
+    --font-body: 'Roboto', sans-serif;
+    --max-width: 1000px;
 }
 
-header{
-text-align:center;
-padding:30px;
+/* ==========================================================================
+   ESTILOS BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.logo{
-max-width:320px;
-width:90%;
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--page-bg);
+    line-height: 1.6;
 }
 
-.language-switch button{
-margin:5px;
-padding:10px 15px;
-cursor:pointer;
+h1, h2, h3 {
+    font-family: var(--font-titles);
+    color: var(--dark-text);
+    font-weight: 700;
 }
 
-.hero{
-padding:60px 20px;
-text-align:center;
-background:linear-gradient(
-180deg,
-#ffffff,
-#f2ede3
-);
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-h1,h2{
-font-family:Merriweather,serif;
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-section{
-padding:50px 20px;
-max-width:1000px;
-margin:auto;
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--primary-red);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
 }
 
-.btn{
-display:inline-block;
-padding:15px 25px;
-background:#d71920;
-color:white;
-text-decoration:none;
-border-radius:5px;
-margin-top:20px;
+.btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
 }
 
-form{
-display:flex;
-flex-direction:column;
-gap:15px;
+/* ==========================================================================
+   HEADER CON PATRÓN ARGENTINO (CELESTE-BLANCO-CELESTE)
+   ========================================================================== */
+.site-header {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 60px;
 }
 
-input,
-textarea{
-padding:12px;
-font-size:16px;
+.banner-stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    z-index: 1;
 }
 
-button{
-padding:12px;
-background:#d71920;
-color:white;
-border:none;
-cursor:pointer;
+.stripe-blue {
+    background: var(--sky-blue);
 }
 
-footer{
-background:#2f3136;
-color:white;
-text-align:center;
-padding:20px;
+.stripe-white {
+    background: var(--white);
 }
 
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
+.header-container {
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 140px;
+}
+
+/* Logo en margen izquierdo sobre el patrón */
+.logo-wrapper {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 165px;
+    width: auto;
+    max-width: none;
+    display: block;
+    background: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Banderas centradas y pequeñas */
+.language-switch {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    margin-top: -18px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.lang-btn-flag {
+    width: 60px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.lang-btn-flag:hover {
+    transform: scale(1.08);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.lang-btn-flag svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    padding: 80px 20px 100px;
+    text-align: center;
+    background: transparent;
+}
+
+.hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+#hero-title {
+    font-size: 48px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+#hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--wood-dark);
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-family: var(--font-body);
+}
+
+.hero-lead {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+#hero-text2 {
+    margin-bottom: 50px;
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+}
+
+/* ==========================================================================
+   FEATURES Y TESTIMONIOS
+   ========================================================================== */
+.features-section, .testimonials-section {
+    padding: 75px 0;
+}
+
+.testimonials-section {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.card, .testimonial-card {
+    background: var(--white);
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f0ede6;
+}
+
+.product-real-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quote {
+    font-style: italic;
+    color: #4a4d53;
+    margin-bottom: 20px;
+}
+
+.author {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary-red);
+}
+
+/* ==========================================================================
+   CONTACTO
+   ========================================================================== */
+.contact-section {
+    padding: 80px 0;
+    background: transparent;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-form-block {
+    flex: 1 1 500px;
+}
+
+.contact-form-block h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modern-form input,
+.modern-form textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid #dcdad4;
+    border-radius: 3px;
+    background-color: var(--white);
+    transition: border-color 0.2s;
+}
+
+.modern-form input:focus,
+.modern-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background-color: var(--white);
+}
+
+.modern-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-data {
+    flex: 1 1 300px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    align-self: flex-start;
+    border: 1px solid #f0ede6;
+}
+
+.contact-data h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.contact-data p {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 10px;
+}
+
+.qr-card-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.qr-card-img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.qr-card-text {
+    font-size: 0.85rem;
+    color: #71717a;
+}
+
+/* ==========================================================================
+   FOOTER Y BOTÓN WHATSAPP
+   ========================================================================== */
+footer {
+    background: var(--dark-text);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.9rem;
+}
+
+.whatsapp-badge {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: #25D366;
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    transition: transform 0.2s;
+}
+
+.whatsapp-badge:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVIDAD MÓVIL */
+@media (max-width: 768px) {
+    .site-header {
+        height: 160px;
+        margin-bottom: 30px;
+    }
+    
+    .banner-stripes {
+        height: 110px;
+    }
+    
+    .header-container {
+        height: 110px;
+    }
+    
+    .logo-wrapper {
+        top: 8px;
+        left: 15px;
+    }
+    
+    .logo {
+        height: 130px;
+    }
+    
+    .language-switch {
+        margin-top: -15px;
+    }
+    
+    .lang-btn-flag {
+        width: 50px;
+        height: 30px;
+    }
+    
+    #hero-title {
+        font-size: 36px;
+    }
+    
+    #hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .contact-container {
+        gap: 30px;
+    }
+    
+    .contact-data {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 110px;
+    }
+    
+    .lang-btn-flag {
+        width: 45px;
+        height: 27px;
+    }
+    
+    #hero-title {
+        font-size: 28px;
+    }
+    
+    .hero {
+        padding: 60px 20px 80px;
+    }
 }
