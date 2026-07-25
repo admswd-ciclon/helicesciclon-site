@@ -1,495 +1,306 @@
-/* ==========================================================================
-   SISTEMA DE VARIABLES - PALETA NATURAL TÉCNICA
-   ========================================================================== */
 :root {
-    --primary-red: #c41e3a;
-    --primary-hover: #a01729;
-    --dark-text: #2c2c2c;
-    --page-bg: #f5f1e8;
-    --wood-dark: #5d4e37;
-    --sky-blue: #87ceeb;
-    --white: #ffffff;
-    --text-main: #3d3d3d;
-    --text-secondary: #6b6b6b;
-    --font-titles: 'Roboto Mono', monospace;
-    --font-body: 'Roboto', sans-serif;
-    --max-width: 1000px;
+  --ink: #302c29;
+  --petrol: #292725;
+  --cream: #eee2ca;
+  --paper: #fff9ed;
+  --red: #b51f2d;
+  --red-dark: #8b1721;
+  --sky: #7dbbd6;
+  --muted: #6f665e;
+  --line: rgba(48, 44, 41, .16);
 }
 
-/* ==========================================================================
-   ESTILOS BASE
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: var(--font-body);
-    color: var(--text-main);
-    background-color: var(--page-bg);
-    background-image: url('assets/propeller-blueprint.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    line-height: 1.6;
-    position: relative;
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6;
 }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(245, 241, 232, 0.85);
-    pointer-events: none;
-    z-index: -1;
+.argentina-banner {
+  min-height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 6px 20px;
+  color: #163b46;
+  background: linear-gradient(to bottom, var(--sky) 0 29%, #fff 29% 71%, var(--sky) 71% 100%);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-align: center;
+  text-transform: uppercase;
 }
+.argentina-banner span { padding: 0 13px; background: rgba(255,255,255,.94); }
 
-h1, h2, h3 {
-    font-family: var(--font-titles);
-    color: var(--dark-text);
-    font-weight: 700;
-}
-
-.container {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 32px;
-    background: var(--primary-red);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 3px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: var(--font-body);
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-}
-
-.btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-1px);
-}
-
-/* ==========================================================================
-   HEADER CON PATRÓN ARGENTINO (CELESTE-BLANCO-CELESTE)
-   ========================================================================== */
 .site-header {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 60px;
+  min-height: 270px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 0 clamp(20px, 5vw, 76px);
+  border-bottom: 0;
+  background: var(--paper);
+  position: relative;
+  z-index: 2;
 }
-
-.banner-stripes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 140px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 100%;
-    z-index: 1;
+.brand {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  min-width: 520px;
 }
-
-.stripe-blue {
-    background: var(--sky-blue);
+.brand img {
+  width: 520px;
+  max-height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 5px rgba(20,45,52,.13));
 }
-
-.stripe-white {
-    background: var(--white);
+nav { display: flex; gap: 28px; margin-left: auto; }
+nav a { font-size: 16px; font-weight: 600; }
+.header-actions { display: flex; align-items: center; gap: 22px; }
+.language { display: flex; align-items: center; gap: 7px; font-size: 15px; }
+.language button {
+  padding: 3px 2px;
+  border: 0;
+  color: var(--muted);
+  background: none;
+  cursor: pointer;
+  font-weight: 700;
 }
+.language button.active { color: var(--red); }
 
-.header-container {
-    position: relative;
-    z-index: 5;
-    display: block;
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-    height: 200px;
+.button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border: 1px solid var(--red);
+  border-radius: 2px;
+  color: #fff;
+  background: var(--red);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform .2s, background .2s;
 }
+.button:hover { transform: translateY(-1px); background: var(--red-dark); }
+.button-small { min-height: 48px; padding: 0 22px; font-size: 16px; }
+.button-outline { color: #fff; border-color: rgba(255,255,255,.45); background: transparent; }
+.button-outline:hover { background: rgba(255,255,255,.08); }
 
-/* Logo en margen izquierdo, altura igual al banner */
-.logo-wrapper {
-    position: absolute;
-    left: 20px;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 140px;
-}
-
-.logo {
-    height: 140px;
-    width: auto;
-    max-width: none;
-    display: block;
-    background: transparent;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
-}
-
-/* Banderas centradas en espacio entre logo y H1 */
-.language-switch {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 172px;
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.lang-btn-flag {
-    width: 60px;
-    height: 36px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 0;
-    background: transparent;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-}
-
-.lang-btn-flag:hover {
-    transform: scale(1.08);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-}
-
-.lang-btn-flag svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 8px;
-}
-
-/* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
 .hero {
-    padding: 80px 20px 100px;
-    text-align: center;
-    background: transparent;
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: minmax(360px, .9fr) 1.2fr;
+  background: var(--paper);
 }
-
-.hero-content {
-    max-width: 750px;
-    margin: 0 auto;
+.hero-copy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 68px clamp(30px, 5.7vw, 88px);
+  background-image: linear-gradient(rgba(255,253,248,.92), rgba(255,253,248,.92)), url("assets/propeller-blueprint.png");
+  background-position: center;
+  background-size: cover;
 }
-
-#hero-title {
-    font-size: 48px;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
-    color: var(--dark-text);
+.eyebrow {
+  margin: 0 0 17px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
 }
-
-#hero-subtitle {
-    font-size: 1.3rem;
-    color: var(--wood-dark);
-    margin-bottom: 12px;
-    font-weight: 400;
-    font-family: var(--font-body);
+h1, h2, h3 {
+  margin-top: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.04;
 }
-
-.hero-lead {
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: var(--text-secondary);
+h1 { max-width: 650px; margin-bottom: 23px; font-size: clamp(43px, 5.1vw, 75px); letter-spacing: -.035em; }
+h2 { margin-bottom: 17px; font-size: clamp(34px, 4vw, 52px); letter-spacing: -.025em; }
+.hero-lead { max-width: 530px; margin: 0 0 32px; color: var(--muted); font-size: 17px; }
+.button-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.text-link { font-size: 13px; font-weight: 700; }
+.text-link b { margin-left: 6px; color: var(--red); }
+.hero-image {
+  min-height: 570px;
+  position: relative;
+  background: linear-gradient(90deg, rgba(16,56,64,.04), transparent 25%), url("assets/aeronave-experimental-helice-ciclon.jpg") center/cover no-repeat;
 }
-
-#hero-text2 {
-    margin-bottom: 50px;
-    color: var(--text-secondary);
-    font-size: 1.3rem;
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -1px;
+  width: clamp(90px, 10vw, 175px);
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--paper) 0%,
+    rgba(255,249,237,.94) 18%,
+    rgba(255,249,237,.67) 45%,
+    rgba(255,249,237,.22) 76%,
+    transparent 100%
+  );
+  filter: blur(.2px);
 }
-
-/* ==========================================================================
-   FEATURES Y TESTIMONIOS
-   ========================================================================== */
-.features-section, .testimonials-section {
-    padding: 75px 0;
+.hero-label {
+  position: absolute;
+  right: 28px;
+  bottom: 27px;
+  display: flex;
+  flex-direction: column;
+  padding: 11px 15px;
+  border: 1px solid rgba(255,255,255,.65);
+  color: #fff;
+  background: rgba(16,56,64,.83);
+  z-index: 2;
+  font-size: 9px;
+  letter-spacing: .15em;
 }
+.hero-label strong { font-size: 11px; }
 
-.testimonials-section {
-    background-color: rgba(0, 0, 0, 0.02);
+.section { padding: 88px clamp(23px, 6vw, 88px); }
+.section-heading { text-align: center; }
+.benefit-grid {
+  max-width: 1120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 43px auto 0;
+  border-top: 1px solid var(--line);
 }
+.benefit-grid article { padding: 34px 30px; border-right: 1px solid var(--line); }
+.benefit-grid article:last-child { border-right: 0; }
+.number { color: var(--red); font: 700 11px monospace; }
+.benefit-grid h3 { margin: 18px 0 11px; font-size: 24px; }
+.benefit-grid p { margin: 0; color: var(--muted); font-size: 13px; }
 
-.section-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
+.process {
+  display: grid;
+  grid-template-columns: 1.03fr .97fr;
+  gap: clamp(45px, 7vw, 100px);
+  background: var(--paper);
 }
+.process-photo img { width: 100%; height: 100%; max-height: 520px; object-fit: cover; }
+.process-copy { align-self: center; }
+.steps { margin: 30px 0; border-top: 1px solid var(--line); }
+.steps div { display: flex; align-items: center; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.steps span { color: var(--red); font: 700 11px monospace; }
+.steps strong { font-size: 13px; }
+.propeller-photo { width: 100%; height: 132px; object-fit: cover; }
 
-.card, .testimonial-card {
-    background: var(--white);
-    padding: 30px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-    border: 1px solid #f0ede6;
+.contact {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(50px, 8vw, 110px);
+  color: #fff;
+  background: #302c29;
 }
-
-.product-real-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 20px;
+.contact-intro { align-self: center; }
+.contact-intro > p:not(.eyebrow) { max-width: 540px; color: #c4d3d6; }
+.quick-contact { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.contact-form label { display: grid; gap: 6px; }
+.contact-form label span { color: #c4d3d6; font-size: 11px; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 2px;
+  outline: none;
+  color: #fff;
+  background: rgba(255,255,255,.06);
 }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--sky); }
+.contact-form textarea { resize: vertical; }
+.full { grid-column: 1 / -1; }
 
-.card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-}
-
-.testimonial-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.quote {
-    font-style: italic;
-    color: #4a4d53;
-    margin-bottom: 20px;
-}
-
-.author {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--primary-red);
-}
-
-/* ==========================================================================
-   CONTACTO
-   ========================================================================== */
-.contact-section {
-    padding: 80px 0;
-    background: transparent;
-}
-
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-
-.contact-form-block {
-    flex: 1 1 500px;
-}
-
-.contact-form-block h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-}
-
-.modern-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.modern-form input,
-.modern-form textarea {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    font-family: inherit;
-    border: 1px solid #dcdad4;
-    border-radius: 3px;
-    background-color: var(--white);
-    transition: border-color 0.2s;
-}
-
-.modern-form input:focus,
-.modern-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-red);
-    background-color: var(--white);
-}
-
-.modern-form textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-.contact-data {
-    flex: 1 1 300px;
-    background: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    align-self: flex-start;
-    border: 1px solid #f0ede6;
-}
-
-.contact-data h3 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-}
-
-.contact-data p {
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding-bottom: 10px;
-}
-
-.qr-card-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.qr-card-img {
-    max-width: 150px;
-    margin-bottom: 10px;
-}
-
-.qr-card-text {
-    font-size: 0.85rem;
-    color: #71717a;
-}
-
-/* ==========================================================================
-   FOOTER Y BOTÓN WHATSAPP
-   ========================================================================== */
 footer {
-    background: var(--dark-text);
-    color: var(--white);
-    text-align: center;
-    padding: 25px 20px;
-    font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 170px 1fr auto;
+  align-items: center;
+  gap: 35px;
+  padding: 36px clamp(22px, 6vw, 88px);
+  color: #b8c9cc;
+  background: #211f1d;
+  font-size: 15px;
+}
+footer img { width: 138px; }
+footer p { margin: 6px 0; }
+.footer-contact { line-height: 1.7; }
+.copyright {
+  color: #fff;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+}
+.floating-whatsapp {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 5;
+  border-radius: 50%;
+  color: #fff;
+  background: #25d366;
+  box-shadow: 0 8px 25px rgba(0,0,0,.22);
+  font-size: 11px;
+  font-weight: 700;
 }
 
-.whatsapp-badge {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    background: #25D366;
-    color: var(--white);
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    z-index: 999;
-    transition: transform 0.2s;
+@media (max-width: 1180px) {
+  .site-header { min-height: 190px; }
+  .brand { min-width: 360px; }
+  .brand img { width: 360px; max-height: 174px; }
+  nav, .desktop-cta { display: none; }
+  .header-actions { margin-left: auto; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-image { min-height: 430px; }
+  .hero-image::before {
+    inset: -1px 0 auto 0;
+    width: 100%;
+    height: 85px;
+    background: linear-gradient(180deg, var(--paper), rgba(255,253,248,.54) 48%, transparent);
+  }
+  .process, .contact { grid-template-columns: 1fr; }
+  .process-photo img { max-height: 420px; }
+  footer { grid-template-columns: 145px 1fr; }
+  .copyright { grid-column: 1 / -1; }
 }
 
-.whatsapp-badge:hover {
-    transform: scale(1.05);
+@media (max-width: 620px) {
+  .argentina-banner { font-size: 8px; letter-spacing: .09em; }
+  .site-header { padding: 0 18px; }
+  .site-header { min-height: 152px; }
+  .brand { min-width: 260px; }
+  .brand img { width: 260px; max-height: 126px; }
+  .hero-copy { padding: 52px 23px 60px; }
+  .hero-image { min-height: 315px; }
+  h1 { font-size: 42px; }
+  .section { padding: 68px 23px; }
+  .benefit-grid { grid-template-columns: 1fr; }
+  .benefit-grid article { padding: 26px 3px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .contact-form { grid-template-columns: 1fr; }
+  .contact-form label, .contact-form .full { grid-column: 1; }
+  .quick-contact, .quick-contact .button { width: 100%; }
+  footer { grid-template-columns: 1fr; gap: 16px; }
+  footer { font-size: 14px; }
+  .copyright { grid-column: 1; font-size: 13px; }
 }
 
-/* RESPONSIVIDAD MÓVIL */
-@media (max-width: 768px) {
-    .site-header {
-        height: 170px;
-        margin-bottom: 30px;
-    }
-    
-    .banner-stripes {
-        height: 110px;
-    }
-    
-    .header-container {
-        height: 170px;
-    }
-    
-    .logo-wrapper {
-        top: 0;
-        left: 15px;
-        height: 110px;
-    }
-    
-    .logo {
-        height: 110px;
-    }
-    
-    .language-switch {
-        top: 145px;
-    }
-    
-    .lang-btn-flag {
-        width: 50px;
-        height: 30px;
-    }
-    
-    #hero-title {
-        font-size: 36px;
-    }
-    
-    #hero-subtitle {
-        font-size: 14px;
-    }
-    
-    .contact-container {
-        gap: 30px;
-    }
-    
-    .contact-data {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .site-header {
-        height: 160px;
-    }
-    
-    .header-container {
-        height: 160px;
-    }
-    
-    .logo-wrapper {
-        height: 100px;
-    }
-    
-    .logo {
-        height: 100px;
-    }
-    
-    .language-switch {
-        top: 137px;
-    }
-    
-    .lang-btn-flag {
-        width: 45px;
-        height: 27px;
-    }
-    
-    #hero-title {
-        font-size: 28px;
-    }
-    
-    .hero {
-        padding: 60px 20px 80px;
-    }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
 }
