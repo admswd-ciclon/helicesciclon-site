@@ -29,7 +29,8 @@ const translations = {
     nameLabel: "Nombre",
     aircraftLabel: "Aeronave / Motor",
     messageLabel: "Mensaje",
-    send: "Enviar consulta"
+    send: "Enviar consulta",
+    qrLabel: "Escanee para guardar el contacto"
   },
   en: {
     country: "Designed and manufactured in Argentina",
@@ -61,7 +62,8 @@ const translations = {
     nameLabel: "Name",
     aircraftLabel: "Aircraft / Engine",
     messageLabel: "Message",
-    send: "Send inquiry"
+    send: "Send inquiry",
+    qrLabel: "Scan to save our contact"
   }
 };
 
